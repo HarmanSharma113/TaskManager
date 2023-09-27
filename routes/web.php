@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 Route::get('about', [AboutController::class,'index']);
 
+
 Route::get('todos', 'TodosController@index');
 Route::get('todos',[TodosController::class,'index'] );
 Route::get('todos/{todoId}',[TodosController::class,'show']);
@@ -31,7 +32,7 @@ Route::get('todos/{todoId}/edit',[TodosController::class,'edit']);
 Route::post('todos/{todoId}/update',[TodosController::class,'update']);
 Route::get('todos/{todoId}/delete',[TodosController::class,'destroy']);
 Route::get('todos/{todoId}/complete',[TodosController::class,'complete']);
-// passing data to the view 
+// passing data to the view
 Route::get('completed',function(){
     return view('completed')->with('todos',Todo::all());
 });
